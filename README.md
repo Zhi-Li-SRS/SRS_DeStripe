@@ -5,8 +5,9 @@ This project provides a Python script for removing stitching stripes in optical 
 ## Comparison of Raw and Processed Images
 ![SRS DeStripe Comparison](https://github.com/Zhi-Li-SRS/SRS_DeStripe/blob/main/comparison/raw_vs_removed.png?raw=true)
 
-- **Left Image**: Raw SRS (Stimulated Raman Scattering) image showing prominent striping artifacts. These stripes are common in SRS microscopy due to image stitching and intensity variations.
-- **Right Image**: The same SRS image after processing with our DeStripe algorithm. Note the significant reduction in striping artifacts and the improved overall image quality.
+- **Left Image**: Raw SRS (Stimulated Raman Scattering) image showing prominent stripes. These stripes are common in whole slide imaging in SRS microscopy.
+
+- **Right Image**: The same SRS image after processing with our DeStripe algorithm. 
 
 ## Installation
 
