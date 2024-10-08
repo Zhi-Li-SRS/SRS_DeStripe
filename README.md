@@ -57,6 +57,8 @@ if __name__ == "__main__":
 
 The processed image will be saved in the `output` directory with the same filename as the input image.
 
+![SRS DeStripe Comparison](https://github.com/Zhi-Li-SRS/SRS_DeStripe/blob/main/comparison/raw_vs_removed.png?raw=true)
+
 ## Requirements
 Recommand install the packages using conda:
 
