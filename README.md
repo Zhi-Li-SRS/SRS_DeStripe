@@ -2,6 +2,12 @@
 
 This project provides a Python script for removing stitching stripes in optical microscopy images, specifically for SRS images. The script corrects the intensity values of the stripes to generate a seamless image with better visual quality.
 
+## Comparison of Raw and Processed Images
+![SRS DeStripe Comparison](https://github.com/Zhi-Li-SRS/SRS_DeStripe/blob/main/comparison/raw_vs_removed.png?raw=true)
+
+- **Left Image**: Raw SRS (Stimulated Raman Scattering) image showing prominent striping artifacts. These stripes are common in SRS microscopy due to image stitching and intensity variations.
+- **Right Image**: The same SRS image after processing with our DeStripe algorithm. Note the significant reduction in striping artifacts and the improved overall image quality.
+
 ## Installation
 
 1. Clone this repository:
@@ -56,8 +62,6 @@ if __name__ == "__main__":
 ## Output
 
 The processed image will be saved in the `output` directory with the same filename as the input image.
-
-![SRS DeStripe Comparison](https://github.com/Zhi-Li-SRS/SRS_DeStripe/blob/main/comparison/raw_vs_removed.png?raw=true)
 
 ## Requirements
 Recommand install the packages using conda:
