@@ -42,7 +42,7 @@ Run the script with the following command:
 python de_stripe.py --image_path path/to/your/image.tif --mask_path path/to/your/mask.tif --min_dist 300 --correction_limit 0.2
 ```
 
-Arguments:
+Args
 - `--image_path`: Path to the input image file (default: "protein_1.tif")
 - `--mask_path`: Path to the mask file (default: "protein_1_mask.tif")
 - `--min_dist`: Minimum distance between stripes (default: 300). For example, if you know the patch size is 256, you can set it to 200.
