@@ -30,6 +30,7 @@ This project provides a Python script for removing stitching stripes in optical 
    ```
 
 ## Usage
+Prepare the input image and mask file. The mask file should be a binary image with the same dimensions as the input image, where the background is 0 and the foreground is 1. 
 
 You can use the script in two ways:
 
