@@ -260,7 +260,7 @@ class VISTAmapDestriper:
         return edge_positions, dominant_freq
 
     def remove_stripes_vistamap(self, image_path, mask_path=None, output_path="process.tif"):
-        """Main method implementing the VISTAmap approach"""
+        """remove stripes from the image using VISTAmap method"""
         self.output_path = output_path
 
         # Create output directory
@@ -307,12 +307,8 @@ class VISTAmapDestriper:
         v_multiplier = calculate_vistamap_multiplier(v_profile, v_ideal)
         v_corrected = h_corrected * v_multiplier[:, np.newaxis]
 
-        # Apply final morphological operations
         final_image = apply_final_morphological_operations(v_corrected, mask)
-
-        # Restore original bright pixels
         final_image[bright_mask] = orig_normalized[bright_mask]
-
         # Rescale to original intensity range
         final_image = final_image * (image_max - image_min) + image_min
 
@@ -341,10 +337,7 @@ class VISTAmapDestriper:
 
 
 def main():
-    """Main function to run the script from command line"""
-    parser = argparse.ArgumentParser(
-        description="VISTAmap: VIgnetted Stitched-Tile Adjustment using Morphological Adaptive Processing"
-    )
+    parser = argparse.ArgumentParser(description="VISTAmap")
     parser.add_argument("--image_path", type=str, default="791.tif", help="Path to the image file.")
     parser.add_argument(
         "--mask_path",
