@@ -237,7 +237,6 @@ class VISTAmapDestriper:
 
         if len(peaks) == 0:
             print(f"No peaks found in {orientation} FFT. Using evenly spaced divisions.")
-            # Use evenly spaced divisions if no peaks found
             edge_positions = np.linspace(0, img_length - 1, 6, dtype=int)
             return edge_positions, None
 
@@ -248,7 +247,7 @@ class VISTAmapDestriper:
         # Calculate estimated stripe width
         stripe_width = int(abs(1 / dominant_freq))
 
-        # Sanity check on stripe width
+        # Check on stripe width
         if stripe_width < 10 or stripe_width > min(image.shape) / 2:
             print(f"Warning: Unreasonable stripe width ({stripe_width}). Using evenly spaced divisions.")
             edge_positions = np.linspace(0, img_length - 1, 6, dtype=int)
@@ -273,11 +272,8 @@ class VISTAmapDestriper:
         temp_image, mask, bright_mask, orig_normalized, (image_min, image_max) = self.load_and_preprocess(
             image_path, mask_path
         )
-
-        h_edge_positions, h_dominant_freq = self.detect_stripes_fft(
-            temp_image, mask, orientation="horizontal"
-        )
-        v_edge_positions, v_dominant_freq = self.detect_stripes_fft(temp_image, mask, orientation="vertical")
+        _, h_dominant_freq = self.detect_stripes_fft(temp_image, mask, orientation="horizontal")
+        _, v_dominant_freq = self.detect_stripes_fft(temp_image, mask, orientation="vertical")
 
         # Process horizontal direction
         h_profile = np.nanmean(temp_image * mask, axis=0)
