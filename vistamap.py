@@ -338,18 +338,18 @@ class VISTAmapDestriper:
 
 def main():
     parser = argparse.ArgumentParser(description="VISTAmap")
-    parser.add_argument("--image_path", type=str, default="791.tif", help="Path to the image file.")
+    parser.add_argument("--image_path", type=str, default="31-MAX.tif", help="Path to the image file.")
     parser.add_argument(
         "--mask_path",
         type=str,
-        default="srs_mask.tif",
+        default="MAX_Left-HSI-mask.tif",
         help="Better to have the path to the mask file. If not provided, a mask will be generated automatically.",
     )
     parser.add_argument(
-        "--output_path", type=str, default="output/process.tif", help="Path to save the output image."
+        "--output_path", type=str, default="output/process_hsi.tif", help="Path to save the output image."
     )
     parser.add_argument(
-        "--tile_size", type=int, default=None, help="Optional to specify the size of each tile (e.g., 256)"
+        "--tile_size", type=int, default=250, help="Optional to specify the size of each tile (e.g., 256)"
     )
     args = parser.parse_args()
 
